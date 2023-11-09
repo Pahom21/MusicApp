@@ -1,6 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,20 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+// routes/web.php
+
+
+Route::get('/my-library', 'LibraryController@index')->name('my-library');
+
+
+Route::prefix('playlist')->group(function() {
+
+    Route::post('/add', 'LibraryController@create')->name('playlist.add');
+    Route::post('/details', 'LibraryController@get_playlist')->name('playlist.details');
+    Route::post('/update', 'LibraryController@update')->name('playlist.update');
+    Route::get('/view/{id}/{random}', 'LibraryController@view')->name('playlist.view');
+    Route::post('/delete', 'LibraryController@delete_playlists')->name('playlist.delete');
+
+}); // Added closing parenthesis
+
+

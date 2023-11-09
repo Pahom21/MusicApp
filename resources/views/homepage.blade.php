@@ -96,12 +96,12 @@
 
 
     <div class="song_side">
+        <ul>
+            <li><a href="/premium">PREMIUM<span></span></a></li>
+            <li><a href="/my-library">MY LIBRARY</a></li>
+            <li><a href="/my-account">MY ACCOUNT</a></li>
+        </ul>
         <nav>
-            <ul>
-                <li>PREMIUM<span></span></li>
-                <li>MY LIBRARY</li>
-                <li>MY ACCOUNT</li>
-            </ul>
             <div class="search">
                 <i class="bi bi-search"></i>
                 <input type="text" placeholder="Search Music...">
