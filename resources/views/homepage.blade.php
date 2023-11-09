@@ -98,7 +98,7 @@
     <div class="song_side">
         <ul>
             <li><a href="/premium">PREMIUM<span></span></a></li>
-            <li><a href="/my-library">MY LIBRARY</a></li>
+            <li><a href="{{ route('playlists') }}">MY LIBRARY</a></li>
             <li><a href="/my-account">MY ACCOUNT</a></li>
         </ul>
         <nav>

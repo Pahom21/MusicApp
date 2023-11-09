@@ -1,8 +1,8 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,29 +19,23 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+Route::get('/tracks', [TrackController::class, 'index'])->name('tracks');
+
+Route::prefix('track')->group(function () {
+    Route::post('/add', [TrackController::class, 'create'])->name('track.add');
+    Route::post('/details', [TrackController::class, 'get_track'])->name('track.details');
+    Route::post('/update', [TrackController::class, 'update'])->name('track.update');
+    Route::post('/playlist/add', [TrackController::class, 'add_to_playlist'])->name('track.playlist.add');
+    Route::post('/playlist/remove', [TrackController::class, 'remove_from_playlist'])->name('track.playlist.remove');
+    Route::post('/delete', [TrackController::class, 'delete_tracks'])->name('track.delete');
 });
-// routes/web.php
 
+Route::get('/playlists', [PlaylistController::class, 'index'])->name('playlists');
 
-Route::get('/my-library', 'LibraryController@index')->name('my-library');
-
-
-Route::prefix('playlist')->group(function() {
-
-    Route::post('/add', 'LibraryController@create')->name('playlist.add');
-    Route::post('/details', 'LibraryController@get_playlist')->name('playlist.details');
-    Route::post('/update', 'LibraryController@update')->name('playlist.update');
-    Route::get('/view/{id}/{random}', 'LibraryController@view')->name('playlist.view');
-    Route::post('/delete', 'LibraryController@delete_playlists')->name('playlist.delete');
-
-}); // Added closing parenthesis
-
-
+Route::prefix('playlist')->group(function () {
+    Route::post('/add', [PlaylistController::class, 'create'])->name('playlist.add');
+    Route::post('/details', [PlaylistController::class, 'get_playlist'])->name('playlist.details');
+    Route::post('/update', [PlaylistController::class, 'update'])->name('playlist.update');
+    Route::get('/view/{id}/{random}', [PlaylistController::class, 'view'])->name('playlist.view');
+    Route::post('/delete', [PlaylistController::class, 'delete_playlists'])->name('playlist.delete');
+});
