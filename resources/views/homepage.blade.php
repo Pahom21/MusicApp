@@ -319,7 +319,7 @@
         </div>
     </div>
 </header>
-    <script src="app.js"></script>
+    <script src="{{asset('resources/js/app.js')}}"></script>
 </body>
 
 </html>
