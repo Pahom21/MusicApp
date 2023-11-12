@@ -1,0 +1,57 @@
+body a{
+    text-decoration: none;
+}
+.main-nav .active
+{
+    color: red!important;
+}
+.main-nav .active::after
+{
+    content: '';
+    background: red;
+    height: 2px;
+    display: block;
+}
+.heroarea{
+    background: url('../Images/wave.gif');
+    min-height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-nav .active
+{
+    color: red!important;
+    background-color: transparent!important;
+}
+.hero-nav .active::after{
+    content: '';
+    background: red;
+    height: 2px;
+    display: block;
+}
+
+.song-small{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.5754985754985755) 0%, rgba(2,0,36,1) 10%, rgba(9,9,121,1) 54%, rgba(6,68,160,1) 73%, rgba(255,0,227,0.98005698005698) 90%, rgba(255,0,227,0.3105413105413105) 104%);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.song-small:hover{
+    border: solid thin grey;
+    cursor: pointer;
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+}
+.song-small-img{
+    width:50px;
+    height:50px;
+    object-fit:cover;
+}
