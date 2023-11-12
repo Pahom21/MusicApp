@@ -65,8 +65,4 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
-    "require": {
-
-        "phpmailer/phpmailer": "^6.8",
-    }
 }
