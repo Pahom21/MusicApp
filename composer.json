@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
@@ -66,9 +65,8 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
-=======
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+
+        "phpmailer/phpmailer": "^6.8",
     }
->>>>>>> 983fbf014ff7c9a0f4e384c60e4bd0c98fc69899
 }
