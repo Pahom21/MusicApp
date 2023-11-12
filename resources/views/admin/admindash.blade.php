@@ -1,91 +1,9 @@
-{{--@include('admin.layouts.headsection')
-  <body>
-
-    @include('admin.layouts.svgs')
-
-    @include('admin.layouts.screenmode')
-
-    @include('admin.layouts.navsection')
-
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
-            <svg class="bi"><use xlink:href="#calendar3"/></svg>
-            This week
-          </button>
-        </div>
-      </div>
-
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      <h2>Music Titles</h2>
-      <div class="table-responsive small">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Artist</th>
-              <th scope="col">Song Title</th>
-              <th scope="col">Genre</th>
-              <th scope="col">Album Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-  </div>
-</div>
-@include('admin.layouts.tailsection')--}}
-
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        {{--Icons Import--}}
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        {{--My custom css--}}
-        <link rel="stylesheet" href="{{asset('css/admdash.css')}}">
-        <title>{{ config('app.name', 'Laravel') }} Admin</title>
-    </head>
+@include('admin.layouts.headsection')
     <body>
         <section id = "sidebar">
             <a href = "#" class = "brand">
               <i class='bx bx-smile'></i>
-              <span class="text">Admin Hub</span>
+              <span class="text">Vooze Admin</span>
             </a>
             {{--Side Bar Section--}}
             <ul class="side-menu top">
@@ -96,7 +14,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{route('music.dashboard')}}">
                   <i class='bx bxl-deezer'></i>
                   <span class="text">Music Operations</span>
                 </a>
@@ -161,23 +79,24 @@
           {{--Main Section--}}
           <main>
             <div class="head-title">
-              <div class="left">
-                <h1>Dashboard</h1>
-                  <ul class="breadcrumb">
-                    <li>
-                      <a href="">Dashboard</a>
-                    </li>
-                    <li><i class="bx bx-chevron-right"></i></li>
-                    <li>
-                      <a href="" class="active">Home</a>
-                    </li>
-                  </ul>
-              </div>
-              <a href="" class="btn-download">
-                <i class='bx bx-cloud-download'></i>
-                <span class="text">Download PDF</span>
-              </a>
-            </div>
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
             <ul class="box-info">
               <li>
                 <i class='bx bx-user'></i>
@@ -202,16 +121,63 @@
               </li>
             <ul>
 
-            <div class="table-data">
-              <div class="order">
-                <div class="head">
-                  <h3>Users</h3>
-                </div>
-              </div>
-            </div>
-          </main>
-
-          {{--End OfMain Section--}}
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Recent Users</h3>
+                            <i class='bx bx-search' ></i>
+                            <i class='bx bx-filter' ></i>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Date Registered</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+                                    <td><span class="status completed">User</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Elvis Makara</p>
+                                    </td>
+                                    <td>01-10-2021</td>
+								<td><span class="status pending">Admin</span></td>
+							</tr>
+							<tr>
+								<td>
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">User</span></td>
+							</tr>
+							<tr>
+								<td>
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">User</span></td>
+							</tr>
+							<tr>
+								<td>
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">User</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</main>
+          {{--End Of Main Section--}}
         </section>
 
         {{--End Of Content Section--}}

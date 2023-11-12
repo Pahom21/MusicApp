@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MusicController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -49,5 +50,9 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['auth','role:Admin'])->group(function () {
 Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('admin.dashboard');
+Route::get('/music',[AdminController::class,'music'])->name('music.dashboard');
+Route::get('/createmusic',[AdminController::class,'musiccreate'])->name('music.create');
+
+Route::post('/createmusic',[MusicController::class,'musicupload'])->name('music.upload');
 });// End group middleware
 
