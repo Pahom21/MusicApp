@@ -41,7 +41,7 @@
 				</a>
 			  </li>
               <li>
-                <a href="#" class="logout">
+                <a href="{{route('admin.logout')}}" class="logout">
                   <i class='bx bxs-log-out'></i>
                   <span class="text">Logout</span>
                 </a>
@@ -99,27 +99,27 @@
 
             <ul class="box-info">
               <li>
-                <i class='bx bx-user'></i>
-                <span class="text">
-                  <h3>10</h3>
-                  <p>Users</p>
-                </span>
+                    <i class='bx bx-user'></i>
+                    <span class="text">
+                    <h3>{{count(collect($scnddata)->pluck('email')->unique())}}</h3>
+                    <p>Users</p>
+                    </span>
               </li>
               <li>
-                <i class='bx bx-library'></i>
-                <span class="text">
-                  <h3>1200</h3>
-                  <p>Songs</p>
-                </span>
+                    <i class='bx bx-library'></i>
+                    <span class="text">
+                    <h3>{{count(collect($data)->pluck('title')->unique())}}</h3>
+                    <p>Songs</p>
+                    </span>
               </li>
               <li>
-                <i class='bx bx-dollar-circle'></i>
-                <span class="text">
-                  <h3>10</h3>
-                  <p>Invoices</p>
-                </span>
+                    <i class='bx bx-dollar-circle'></i>
+                    <span class="text">
+                    <h3>10</h3>
+                    <p>Invoices</p>
+                    </span>
               </li>
-            <ul>
+            </ul>
 
                 <div class="table-data">
                     <div class="order">
@@ -132,46 +132,23 @@
                             <thead>
                                 <tr>
                                     <th>User</th>
-                                    <th>Date Registered</th>
-                                    <th>Status</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($scnddata as $user)
                                 <tr>
                                     <td>
-                                        <p>John Doe</p>
+                                        <p>{{$user['name']}}</p>
                                     </td>
-                                    <td>01-10-2021</td>
-                                    <td><span class="status completed">User</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>Elvis Makara</p>
-                                    </td>
-                                    <td>01-10-2021</td>
-								<td><span class="status pending">Admin</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">User</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">User</span></td>
-							</tr>
-							<tr>
-								<td>
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">User</span></td>
-							</tr>
+                                    <td>{{$user['email']}}</td>
+								    <td>@if ($user['role'] == 'Admin')
+                                        <span class="status Admin">Admin</span>
+                                    @elseif ($user['role'] == 'User')
+                                        <span class="status User">User</span>
+                                    @endif</td>
+                                @endforeach
 						</tbody>
 					</table>
 				</div>

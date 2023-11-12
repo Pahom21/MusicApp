@@ -56,14 +56,14 @@
                     <li>
                         <i class='bx bx-user'></i>
                         <span class="text">
-                        <h3>10</h3>
+                        <h3>{{count(collect($data)->pluck('artist')->unique())}}</h3>
                         <p>Artists</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bx-library'></i>
                         <span class="text">
-                        <h3>1200</h3>
+                        <h3>{{count(collect($data)->pluck('title')->unique())}}</h3>
                         <p>Songs</p>
                         </span>
                     </li>

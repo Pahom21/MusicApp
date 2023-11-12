@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,5 +55,9 @@ Route::get('/music',[AdminController::class,'music'])->name('music.dashboard');
 Route::get('/createmusic',[AdminController::class,'musiccreate'])->name('music.create');
 
 Route::post('/createmusic',[MusicController::class,'musicupload'])->name('music.upload');
+
+Route::get('/logout', [LogoutController::class, 'logout'])->name('admin.logout');
+
 });// End group middleware
+
 

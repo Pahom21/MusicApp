@@ -60,7 +60,7 @@
                            <li><a class="dropdown-item" href="{{route('login')}}">Login</a></a></li>
                            <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                            <li><hr class="dropdown-divider"></li>
-                           <li><a class="dropdown-item" href="#">Premium</a></li>
+                           <li><a class="dropdown-item" href="#">""</a></li>
                          </ul>
                       </li>
                       <img class="rounded-circle"src="{{asset('Images/wave.gif')}}" alt="Image of a user" style="width:40px;height:40px"/>
@@ -95,142 +95,24 @@
                     <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
                     <div class="ms-1 pt-3">
                        <div>
-                        Song Title |
-                        <small>Song Artist</small>
+                        <span class="song-title">Superheroes</span> |
+                        <small>Metro Booming</small>
                        </div>
                     </div>
                 </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
+                <div class="col-2">
+                    <i class="bi bi-play-circle play-btn" data-src="{{asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3')}}"></i>
+                </div>
+                <div class="audio-controls" style = "display:none">
+                    <audio class="audio-player" controls onloadedmetadata="setAudioDuration(this)">
+                        <source src="{{asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3')}}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="audio-duration">00:00</div>
                 </div>
               </div>
               {{--End of song item--}}
-               {{--Song item--}}
-               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">02</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-               {{--Song item--}}
-               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">03</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-               {{--Song item--}}
-               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">04</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-            </div>
 
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                {{--Song item--}}
-              <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">07</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-               {{--Song item--}}
-               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">08</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-            </div>
-
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-
-                {{--Song item--}}
-              <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">09</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
-               {{--Song item--}}
-               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
-                <div class="col-1 h3">10</div>
-                <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="{{asset('Images/apple-music.svg')}}" alt="Album Art"/>
-                    <div class="ms-1 pt-3">
-                       <div>
-                        Song Title |
-                        <small>Song Artist</small>
-                       </div>
-                    </div>
-                </div>
-                <div class="col-2">05:00
-                    <i class="bi bi-play"></i>
-                </div>
-              </div>
-              {{--End of song item--}}
             </div>
           </div>
 
@@ -238,8 +120,50 @@
 
         {{--End Hero Area--}}
 
-    </main>{{--End Main Area--}}
-    {{--scripts--}}
+    </main>
+    {{--End Main Area--}}
+
+
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let playButtons = document.querySelectorAll(".play-btn");
+
+            playButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    let audioPlayer = button.parentElement.nextElementSibling.querySelector(".audio-player");
+                    let audioControls = button.parentElement.nextElementSibling.querySelector(".audio-controls");
+                    let audioDuration = audioControls.querySelector(".audio-duration");
+                    let audioSource = button.getAttribute("data-src");
+
+                    if (audioPlayer.src === audioSource) {
+                        if (audioPlayer.paused) {
+                            audioPlayer.play();
+                        } else {
+                            audioPlayer.pause();
+                        }
+                    } else {
+                        audioPlayer.src = audioSource;
+                        audioPlayer.load();
+                        audioPlayer.play();
+                    }
+
+                    audioPlayer.addEventListener("loadedmetadata", function () {
+                        let duration = audioPlayer.duration;
+                        let minutes = Math.floor(duration / 60);
+                        let seconds = Math.floor(duration % 60);
+                        let formattedDuration = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                        audioDuration.textContent = formattedDuration;
+                    });
+
+                    // Show the audio controls
+                    audioControls.style.display = "block";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
