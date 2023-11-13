@@ -1,3 +1,5 @@
+
+
 @include('admin.layouts.headsection')
     <body>
         <section id = "sidebar">
@@ -37,6 +39,15 @@
 
           {{--Main Section--}}
           <main>
+            @if ($message = Session::get('success'))
+                <div class = "alert alert-success">
+                    <p><i class='bx bx-check-circle'></i> {{ $message }}</p>
+                </div>
+            @elseif ($message = Session::get('error'))
+                <div>
+                    <p><i class='bx bx-x-circle'></i> {{ $message }}</p>
+                </div>
+            @endif
             <div class="head-title">
 				<div class="left">
 					<h1>Music Dash</h1>
@@ -64,14 +75,14 @@
                     <li>
                         <i class='bx bx-user'></i>
                         <span class="text">
-                        <h3>{{count(collect($data)->pluck('artist')->unique())}}</h3>
+                        <h3>{{\App\Models\song::distinct('artist')->count()}}</h3>
                         <p>Artists</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bx-library'></i>
                         <span class="text">
-                        <h3>{{count(collect($data)->pluck('title')->unique())}}</h3>
+                        <h3>{{\App\Models\song::distinct('title')->count()}}</h3>
                         <p>Songs</p>
                         </span>
                     </li>
@@ -97,20 +108,24 @@
                                 @foreach ($data as  $row)
                                 <tr>
                                     <td>
-                                        <p>{{$row['title']}}</p>
+                                        <p>{{$row->title}}</p>
                                     </td>
 
                                     <td>
-                                        <p>{{$row['artist']}}</p>
+                                        <p>{{$row->artist}}</p>
                                     </td>
 
                                     <td>
-                                        <p>{{$row['albumname']}}</p>
+                                        <p>{{$row->albumname}}</p>
                                     </td>
                                     <td>
-                                        <a href=""><i class='bx bx-edit-alt'></i></a>
+                                        <a href="{{route('music.edit',['id'=>$row->songId])}}"><i class='bx bx-edit-alt'></i></a>
                                         &nbsp;
-                                        <span class="text"><a href=""><i class='bx bx-folder-minus'></i></a></span>
+                                        <span class="text">
+                                            <a href="{{route('music.delete',['songId'=>$row->songId])}}" onclick="return confirm('Are you sure you want to delete this record?')">
+                                                <i class='bx bx-folder-minus'></i>
+                                            </a>
+                                        </span>
                                     </td>
 
                                 </tr>

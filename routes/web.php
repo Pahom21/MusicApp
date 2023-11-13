@@ -56,6 +56,11 @@ Route::get('/createmusic',[AdminController::class,'musiccreate'])->name('music.c
 
 Route::post('/createmusic',[MusicController::class,'musicupload'])->name('music.upload');
 
+Route::get('/{id}/edit',[MusicController::class,'musicedit'])->name('music.edit');
+Route::put('/edit/{songId}',[MusicController::class,'musicupdate']) ->name('music.update');
+
+Route::delete('/delete/{songId}', [MusicController::class, 'musicdelete'])->name('music.delete');
+
 Route::get('/logout', [LogoutController::class, 'logout'])->name('admin.logout');
 
 });// End group middleware

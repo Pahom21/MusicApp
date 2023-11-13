@@ -1,3 +1,5 @@
+
+
 <?php echo $__env->make('admin.layouts.headsection', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <body>
         <section id = "sidebar">
@@ -37,6 +39,15 @@
 
           
           <main>
+            <?php if($message = Session::get('success')): ?>
+                <div class = "alert alert-success">
+                    <p><i class='bx bx-check-circle'></i> <?php echo e($message); ?></p>
+                </div>
+            <?php elseif($message = Session::get('error')): ?>
+                <div>
+                    <p><i class='bx bx-x-circle'></i> <?php echo e($message); ?></p>
+                </div>
+            <?php endif; ?>
             <div class="head-title">
 				<div class="left">
 					<h1>Music Dash</h1>
@@ -64,14 +75,14 @@
                     <li>
                         <i class='bx bx-user'></i>
                         <span class="text">
-                        <h3><?php echo e(count(collect($data)->pluck('artist')->unique())); ?></h3>
+                        <h3><?php echo e(\App\Models\song::distinct('artist')->count()); ?></h3>
                         <p>Artists</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bx-library'></i>
                         <span class="text">
-                        <h3><?php echo e(count(collect($data)->pluck('title')->unique())); ?></h3>
+                        <h3><?php echo e(\App\Models\song::distinct('title')->count()); ?></h3>
                         <p>Songs</p>
                         </span>
                     </li>
@@ -97,20 +108,24 @@
                                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td>
-                                        <p><?php echo e($row['title']); ?></p>
+                                        <p><?php echo e($row->title); ?></p>
                                     </td>
 
                                     <td>
-                                        <p><?php echo e($row['artist']); ?></p>
+                                        <p><?php echo e($row->artist); ?></p>
                                     </td>
 
                                     <td>
-                                        <p><?php echo e($row['albumname']); ?></p>
+                                        <p><?php echo e($row->albumname); ?></p>
                                     </td>
                                     <td>
-                                        <a href=""><i class='bx bx-edit-alt'></i></a>
+                                        <a href="<?php echo e(route('music.edit',['id'=>$row->songId])); ?>"><i class='bx bx-edit-alt'></i></a>
                                         &nbsp;
-                                        <span class="text"><a href=""><i class='bx bx-folder-minus'></i></a></span>
+                                        <span class="text">
+                                            <a href="<?php echo e(route('music.delete',['songId'=>$row->songId])); ?>" onclick="return confirm('Are you sure you want to delete this record?')">
+                                                <i class='bx bx-folder-minus'></i>
+                                            </a>
+                                        </span>
                                     </td>
 
                                 </tr>

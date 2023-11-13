@@ -514,6 +514,10 @@ body {
     background-color: #0056b3;
 }
 
+#content main .table-data .order .text a{
+    color: var(--red);
+}
+
 
 
 

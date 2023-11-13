@@ -7,7 +7,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="logout">
+      <a href="<?php echo e(route('admin.logout')); ?>" class="logout">
         <i class='bx bxs-log-out'></i>
         <span class="text">Logout</span>
       </a>

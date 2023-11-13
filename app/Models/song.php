@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class song extends Model
 {
   protected $table ="songs";
+  protected $primaryKey = 'songId';
   protected $guarded =[];
 
 }

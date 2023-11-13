@@ -32,53 +32,11 @@
                 </a>
               </li>
             </ul>
-              {{--Logout Section--}}
-            <ul class = "side-menu">
-              <li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</a>
-			  </li>
-              <li>
-                <a href="{{route('admin.logout')}}" class="logout">
-                  <i class='bx bxs-log-out'></i>
-                  <span class="text">Logout</span>
-                </a>
-              </li>
-            </ul>
-
-        </section>
-        {{--End Side Bar--}}
-
-
-        {{--Content Section--}}
-        <section id="content">
-          {{--NAVBAR--}}
-          <nav>
-            <i class='bx bx-menu'></i>
-            <a href="" class="nav-link">Categories</a>
-            <form action="">
-              <div class="form-input">
-                <input type="search" name="search" id="search" placeholder="Search...">
-                <button type="submit" class="search-btn"><i class='bx bx-search-alt-2'></i></button>
-              </div>
-            </form>
-            <input type="checkbox" id="switch-mode" hidden>
-			<label for="switch-mode" class="switch-mode"></label>
-            <a href="" class="notification">
-              <i class='bx bxs-bell'></i>
-              <span class="num">8</span>
-            </a>
-            <a href="" class="profile">
-              <img src="{{asset('Images/wave.gif')}}" alt="Admin Image" style="width:40px;height:40px"/>
-            </a>
-          </nav>
-          {{--End Of NAVBAR--}}
+            @include('admin.layouts.navsection')
 
           {{--Main Section--}}
           <main>
-            <div class="head-title">
+             <div class="head-title">
 				<div class="left">
 					<h1>Dashboard</h1>
 					<ul class="breadcrumb">
@@ -95,31 +53,31 @@
 					<i class='bx bxs-cloud-download' ></i>
 					<span class="text">Download PDF</span>
 				</a>
-			</div>
+			 </div>
 
-            <ul class="box-info">
-              <li>
+             <ul class="box-info">
+                <li>
                     <i class='bx bx-user'></i>
                     <span class="text">
-                    <h3>{{count(collect($scnddata)->pluck('email')->unique())}}</h3>
+                    <h3>{{\App\Models\User::distinct('email')->count()}}</h3>
                     <p>Users</p>
                     </span>
-              </li>
-              <li>
+                </li>
+                <li>
                     <i class='bx bx-library'></i>
                     <span class="text">
-                    <h3>{{count(collect($data)->pluck('title')->unique())}}</h3>
+                    <h3>{{\App\Models\song::distinct('title')->count()}}</h3>
                     <p>Songs</p>
                     </span>
-              </li>
-              <li>
+                </li>
+                <li>
                     <i class='bx bx-dollar-circle'></i>
                     <span class="text">
                     <h3>10</h3>
                     <p>Invoices</p>
                     </span>
-              </li>
-            </ul>
+                </li>
+             </ul>
 
                 <div class="table-data">
                     <div class="order">
@@ -140,20 +98,20 @@
                                 @foreach ($scnddata as $user)
                                 <tr>
                                     <td>
-                                        <p>{{$user['name']}}</p>
+                                        <p>{{$user->name}}</p>
                                     </td>
-                                    <td>{{$user['email']}}</td>
-								    <td>@if ($user['role'] == 'Admin')
+                                    <td>{{$user->email }}</td>
+								    <td>@if ($user->role == 'Admin')
                                         <span class="status Admin">Admin</span>
-                                    @elseif ($user['role'] == 'User')
+                                    @elseif ($user->role == 'User')
                                         <span class="status User">User</span>
                                     @endif</td>
                                 @endforeach
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</main>
+						    </tbody>
+					    </table>
+				    </div>
+			    </div>
+		    </main>
           {{--End Of Main Section--}}
         </section>
 
