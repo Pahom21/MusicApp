@@ -20,7 +20,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{route('invoice.dash')}}">
                   <i class='bx bxs-bank'></i>
                   <span class="text">Invoices</span>
                 </a>

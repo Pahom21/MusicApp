@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -63,6 +64,15 @@ Route::delete('/delete/{songId}', [MusicController::class, 'musicdelete'])->name
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('admin.logout');
 
+
+//INVOICE CONTROLLERS
+Route::get('/invoicing', [InvoiceController::class,'invoice'])->name('invoice.dash');
+Route::get('/invoice/pdf', [InvoiceController::class, 'InvoicesPDF'])->name('invoice.pdf');
+Route::get('/invoice/create', [InvoiceController::class,'create'])->name('invoice.create');
+Route::post('/invoice/create', [InvoiceController::class,'store'])->name('invoice.upload');
+Route::get('/invoice/{invoicesId}/edit', [InvoiceController::class,'edit']) ->name('invoice.edit');
+Route::put('/invoice/edit/{invoicesId}', [InvoiceController::class,'update']) ->name('invoice.update');
+Route::delete('/invoice/delete/{invoicesId}', [InvoiceController::class,'delete']) ->name('invoice.delete');
 });// End group middleware
 
 

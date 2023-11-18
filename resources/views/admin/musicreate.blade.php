@@ -21,7 +21,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{route('invoice.dash')}}">
                   <i class='bx bxs-bank'></i>
                   <span class="text">Invoices</span>
                 </a>
@@ -56,14 +56,14 @@
                     <li>
                         <i class='bx bx-user'></i>
                         <span class="text">
-                        <h3>{{count(collect($data)->pluck('artist')->unique())}}</h3>
+                        <h3>{{\App\Models\song::distinct('artist')->count()}}</h3>
                         <p>Artists</p>
                         </span>
                     </li>
                     <li>
                         <i class='bx bx-library'></i>
                         <span class="text">
-                        <h3>{{count(collect($data)->pluck('title')->unique())}}</h3>
+                        <h3>{{\App\Models\song::distinct('title')->count()}}</h3>
                         <p>Songs</p>
                         </span>
                     </li>
