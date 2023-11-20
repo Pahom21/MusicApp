@@ -11,4 +11,8 @@
         {{--My custom css--}}
         <link rel="stylesheet" href="{{asset('css/admdash.css')}}">
         <title>{{ config('app.name', 'Laravel') }} Admin</title>
+        {{--Script For My Table--}}
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        
     </head>

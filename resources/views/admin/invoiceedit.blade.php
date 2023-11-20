@@ -27,7 +27,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="{{ route('admin.analytics')}}">
                   <i class='bx bxs-analyse'></i>
                   <span class="text">Analytics</span>
                 </a>

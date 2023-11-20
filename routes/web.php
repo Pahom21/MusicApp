@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\AnalysisController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,16 +55,17 @@ Route::middleware(['auth','role:Admin'])->group(function () {
 Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('admin.dashboard');
 Route::get('/music',[AdminController::class,'music'])->name('music.dashboard');
 Route::get('/createmusic',[AdminController::class,'musiccreate'])->name('music.create');
-
+//POST & PUT
 Route::post('/createmusic',[MusicController::class,'musicupload'])->name('music.upload');
-
 Route::get('/{id}/edit',[MusicController::class,'musicedit'])->name('music.edit');
 Route::put('/edit/{songId}',[MusicController::class,'musicupdate']) ->name('music.update');
-
 Route::delete('/delete/{songId}', [MusicController::class, 'musicdelete'])->name('music.delete');
-
 Route::get('/logout', [LogoutController::class, 'logout'])->name('admin.logout');
 
+
+//Analysis Routes
+Route::get('/admin/analytics', [AnalysisController::class,'index'])->name('admin.analytics')
+;
 
 //INVOICE CONTROLLERS
 Route::get('/invoicing', [InvoiceController::class,'invoice'])->name('invoice.dash');

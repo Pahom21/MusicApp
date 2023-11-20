@@ -1,6 +1,6 @@
 const music = new Audio('Ethir Neechal.mp3');
 
-// creating an  Array 
+// creating an  Array
 
 const songs = [
     {
@@ -15,8 +15,8 @@ const songs = [
         <div class="subtitle">Drake</div>`,
         poster: "img/drake.webp"
     },
-    
-    // all object type 
+
+    // all object type
     {
         id:"3",
         songName: `Pathala Pathala <br>
@@ -288,7 +288,7 @@ back.addEventListener('click', ()=>{
     document.getElementById(`${index}`).classList.add('bi-pause-fill');
     makeAllBackgrounds();
     Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105, 105, 170, .1)";
-    
+
 })
 next.addEventListener('click', ()=>{
     index -= 0;
@@ -313,7 +313,7 @@ next.addEventListener('click', ()=>{
     document.getElementById(`${index}`).classList.add('bi-pause-fill');
     makeAllBackgrounds();
     Array.from(document.getElementsByClassName('songItem'))[`${index-1}`].style.background = "rgb(105, 105, 170, .1)";
-    
+
 })
 
 
@@ -339,3 +339,5 @@ left_scrolls.addEventListener('click', ()=>{
 right_scrolls.addEventListener('click', ()=>{
     item.scrollLeft += 330;
 })
+
+

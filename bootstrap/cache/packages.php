@@ -1,4 +1,15 @@
 <?php return array (
+  'arielmejiadev/larapex-charts' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'ArielMejiaDev\\LarapexCharts\\LarapexChartsServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LarapexChart' => 'ArielMejiaDev\\LarapexCharts\\Facades\\LarapexChart',
+    ),
+  ),
   'barryvdh/laravel-dompdf' => 
   array (
     'providers' => 
@@ -9,6 +20,17 @@
     array (
       'Pdf' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
       'PDF' => 'Barryvdh\\DomPDF\\Facade\\Pdf',
+    ),
+  ),
+  'carlos-meneses/laravel-mpdf' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Mccarlosen\\LaravelMpdf\\LaravelMpdfServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'PDF' => 'Mccarlosen\\LaravelMpdf\\Facades\\LaravelMpdf',
     ),
   ),
   'laravel/breeze' => 

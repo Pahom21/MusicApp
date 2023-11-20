@@ -8,9 +8,10 @@ use App\Models\User;
 use App\Mail\InvoiceCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Storage;
-use \Mpdf\Mpdf as PDF;
+use Mpdf\Output\Destination;
+use Mpdf\Mpdf;
+
+
 
 
 
@@ -54,6 +55,7 @@ class InvoiceController extends Controller
     }
 
     public function InvoicesPDF(){
+        
         $invoices = Invoice::all();
         $data = [
             'title'=>'Invoices',
@@ -61,9 +63,11 @@ class InvoiceController extends Controller
             'invoices' => $invoices,
         ];
 
-        $pdf = PDF::loadView('admin.invoicepdf_view',$data);
+        $mpdf = new Mpdf();
+        $html = view('admin.invoicepdf_view', $data)->render();
 
-        return $pdf->download('invoices.pdf');
+        $mpdf->WriteHTML($html);
+        $mpdf->Output('invoices.pdf', Destination::INLINE);
     }
 
     public function edit($invoicesId)

@@ -11,5 +11,9 @@
         
         <link rel="stylesheet" href="<?php echo e(asset('css/admdash.css')); ?>">
         <title><?php echo e(config('app.name', 'Laravel')); ?> Admin</title>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        
     </head>
 <?php /**PATH C:\xampp\htdocs\Loginverification\resources\views/admin/layouts/headsection.blade.php ENDPATH**/ ?>
