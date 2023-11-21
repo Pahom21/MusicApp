@@ -6,8 +6,6 @@
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
         <title><?php echo e(config('app.name', 'Laravel')); ?></title>
-        <link rel="icon" type="image/gif" href="<?php echo e(asset('Images/wave.gif')); ?>">
-
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

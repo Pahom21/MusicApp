@@ -39,7 +39,6 @@
     35 => 'App\\Providers\\AuthServiceProvider',
     36 => 'App\\Providers\\EventServiceProvider',
     37 => 'App\\Providers\\RouteServiceProvider',
-    38 => 'Mccarlosen\\LaravelMpdf\\LaravelMpdfServiceProvider',
   ),
   'eager' => 
   array (
@@ -66,7 +65,6 @@
     20 => 'App\\Providers\\AuthServiceProvider',
     21 => 'App\\Providers\\EventServiceProvider',
     22 => 'App\\Providers\\RouteServiceProvider',
-    23 => 'Mccarlosen\\LaravelMpdf\\LaravelMpdfServiceProvider',
   ),
   'deferred' => 
   array (

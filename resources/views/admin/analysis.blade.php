@@ -134,7 +134,7 @@
 
         {{--End Of Content Section--}}
 
-     <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
 
         <script>
             // User Registrations per month
@@ -155,25 +155,24 @@
             });
 
             // Invoices Paid and Unpaid (overall)
-var invoiceCtx = document.getElementById('invoiceChart').getContext('2d');
-var invoiceChart = new Chart(invoiceCtx, {
-    type: 'pie',
-    data: {
-        labels: ['Paid', 'Unpaid'],
-        datasets: [{
-            label: 'Paid And Unpaid Invoices',
-            data: [
-                {!! $graphData['invoicesPaid']['paidSum'] ?? 0 !!}, // Total count of paid invoices
-                {!! $graphData['invoicesPaid']['unpaidSum'] ?? 0 !!}, // Total count of unpaid invoices
-            ],
-            backgroundColor: [
-                'rgba(0, 123, 255, 0.7)', // Blue for Paid
-                'rgba(255, 99, 132, 0.7)', // Red for Unpaid
-            ],
-        }],
-    },
-});
-
-    </script>
+            var invoiceCtx = document.getElementById('invoiceChart').getContext('2d');
+            var invoiceChart = new Chart(invoiceCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Paid', 'Unpaid'],
+                    datasets: [{
+                        label: 'Paid And Unpaid Invoices',
+                        data: [
+                            {!! $graphData['invoicesPaid']['paidSum'] ?? 0 !!}, // Total count of paid invoices
+                            {!! $graphData['invoicesPaid']['unpaidSum'] ?? 0 !!}, // Total count of unpaid invoices
+                        ],
+                        backgroundColor: [
+                            'rgba(0, 123, 255, 0.7)', // Blue for Paid
+                            'rgba(255, 99, 132, 0.7)', // Red for Unpaid
+                        ],
+                    }],
+                },
+            });
+        </script>
 </body>
 </html>
