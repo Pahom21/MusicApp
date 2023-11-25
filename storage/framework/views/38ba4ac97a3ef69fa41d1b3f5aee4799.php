@@ -9,20 +9,20 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('Dashboard')); ?>
-
+            <?php echo e(__('Dashboard')); ?> 
         </h2>
      <?php $__env->endSlot(); ?>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <?php echo e(__("You're logged in!")); ?>
+                    <?php echo e(("You're logged in!")); ?>
 
                 </div>
             </div>
         </div>
+        
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

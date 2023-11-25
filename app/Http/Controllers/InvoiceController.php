@@ -8,7 +8,9 @@ use App\Models\User;
 use App\Mail\InvoiceCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Mpdf\Mpdf;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use Mpdf\Mpdf as PDF;
 
 
 
@@ -54,21 +56,29 @@ class InvoiceController extends Controller
     }
 
     public function InvoicesPDF(){
+        try {
+            $invoices = Invoice::all();
 
-        $invoices = Invoice::all();
-        $data = [
-            'title'=>'Invoices',
-            'date'=> date('Y-m-d'),
-            'invoices' => $invoices,
-        ];
+            $title = 'Invoices';
+            $date = date('Y-m-d');
 
-        $mpdf = new Mpdf();
+            $pdf = new PDF(); // assuming you've imported or aliased the Mpdf class correctly
 
-        $mpdf->WriteHTML(view('admin.invoicepdf_view',$data));
+            return response()->streamDownload(function () use ($invoices, $title, $date, $pdf) {
+                // Assuming 'admin.invoicepdf_view' generates HTML content for the invoice
+                $htmlContent = view('admin.invoicepdf_view', compact('invoices', 'title', 'date'))->render();
 
-        return $mpdf->Output('invoicereport.pdf','D');
+                // Add the HTML content to the mPDF instance
+                $pdf->WriteHTML($htmlContent);
+
+                // Output the PDF content
+                echo $pdf->Output('', 'S');
+            }, 'invoice.pdf');
+        } catch (\Exception $e) {
+            Log::error('Error generating PDF: ' . $e->getMessage());
+            return response()->json(['error' => 'Error generating PDF.'], 500);
+        }
     }
-
     public function edit($invoicesId)
     {
         $invoice = Invoice::findOrFail($invoicesId);

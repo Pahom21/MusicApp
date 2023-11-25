@@ -50,7 +50,7 @@ class MusicController extends Controller
 
     public function musicedit($songId){
         $data = song::latest()->paginate(10);
-        $music = song::where('songId',$songId)->first();
+        $music = song::where('song_id',$songId)->first();
         return view('admin.edit',compact('music','songId'));
     }
     public function musicupdate(Request $request, $songId)
@@ -106,13 +106,13 @@ class MusicController extends Controller
         $music = song::findOrFail($songId);
 
         // Delete audio file
-        if (File::exists('upload/' . $music->audiofile)) {
-            File::delete('upload/' . $music->audiofile);
+        if (File::exists('uploads/' . $music->audiofile)) {
+            File::delete('uploads/' . $music->audiofile);
         }
 
         // Delete album art file
-        if (File::exists('upload/' . $music->albumart)) {
-            File::delete('upload/' . $music->albumart);
+        if (File::exists('uploads/' . $music->albumart)) {
+            File::delete('uploads/' . $music->albumart);
         }
 
         $music->delete();
