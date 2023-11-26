@@ -99,8 +99,8 @@
                     <div class="order">
                         <div class="head">
                             <h3>Recent Invoices</h3>
-                            <a href=""><i class='bx bx-search' ></i></a>
-                            <i class='bx bx-filter' ></i>
+                            {{-- <a href=""><i class='bx bx-search' ></i></a>
+                            <i class='bx bx-filter' ></i> --}}
                         </div>
                         <table>
                             <thead>

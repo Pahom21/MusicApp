@@ -73,18 +73,25 @@
                 <li>
                     <i class='bx bx-dollar-circle'></i>
                     <span class="text">
-                    <h3>10</h3>
-                    <p>Invoices</p>
+                    <h3>{{\App\Models\Invoice::distinct('invoicesId')->count()}}</h3>
+                    <p>Total Invoices</p>
                     </span>
                 </li>
+                {{-- <li>
+                    <i class='bx bx-dollar-circle'></i>
+                    <span class="text">
+                    <h3>{{\App\Models\Invoice::where('status','pending')->count()}}</h3>
+                    <p>Invoices Pending</p>
+                    </span>
+                </li> --}}
              </ul>
 
                 <div class="table-data">
                     <div class="order">
                         <div class="head">
                             <h3>Recent Users</h3>
-                            <i class='bx bx-search' ></i>
-                            <i class='bx bx-filter' ></i>
+                            {{-- <i class='bx bx-search' ></i>
+                            <i class='bx bx-filter' ></i> --}}
                         </div>
                         <table>
                             <thead>
@@ -117,7 +124,7 @@
 
         {{--End Of Content Section--}}
 
-        <script src = "{{asset('js/script.js')}} ">
+        <script src = "{{asset('js/script.js',true)}} ">
 
         </script>
   </body>

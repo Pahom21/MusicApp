@@ -92,8 +92,8 @@
                     <div class="order">
                         <div class="head">
                             <h3>Recent Music</h3>
-                            <a href=""><i class='bx bx-search' ></i></a>
-                            <i class='bx bx-filter' ></i>
+                            {{-- <a href=""><i class='bx bx-search' ></i></a>
+                            <i class='bx bx-filter' ></i> --}}
                         </div>
                         <table>
                             <thead>
@@ -119,10 +119,10 @@
                                         <p>{{$row->albumname}}</p>
                                     </td>
                                     <td>
-                                        <a href="{{route('music.edit',['id'=>$row->songId])}}"><i class='bx bx-edit-alt'></i></a>
+                                        <a href="{{route('music.edit',['id'=>$row->song_id])}}"><i class='bx bx-edit-alt'></i></a>
                                         &nbsp;
                                         <span class="text">
-                                            <a href="{{route('music.delete',['songId'=>$row->songId])}}" onclick="return confirm('Are you sure you want to delete this record?')">
+                                            <a href="{{route('music.delete',['songId'=>$row->song_id])}}" onclick="return confirm('Are you sure you want to delete this record?')">
                                                 <i class='bx bx-folder-minus'></i>
                                             </a>
                                         </span>
