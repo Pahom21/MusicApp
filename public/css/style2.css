@@ -42,7 +42,7 @@ input[type="email"] {
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -57,4 +57,21 @@ button {
 
 .hidden {
     display: none;
+}
+
+.basic-link{
+    color: white;
+    text-decoration: none; /* Optional: Remove underlines on the link */
+    transition: color 0.3s; /* Optional: Add a smooth color transition */
+}
+.premium-link{
+color: white;
+    text-decoration: none; /* Optional: Remove underlines on the link */
+    transition: color 0.3s; /* Optional: Add a smooth color transition */
+}
+.basic-link:hover{
+    color:aqua;
+}
+.premium-link:hover{
+    color:aqua;
 }
