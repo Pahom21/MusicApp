@@ -1,4 +1,4 @@
-const music = new Audio();
+const music = new Audio('Ethir Neechal.mp3');
 
 // creating an  Array 
 
@@ -7,7 +7,7 @@ const songs = [
         id:'1',
         songName:` On My Way <br>
         <div class="subtitle">Alan Walker</div>`,
-        poster: "images/1.jpg"
+        poster: "img/1.jpg"
     },
     {
         id:'2',
@@ -18,9 +18,9 @@ const songs = [
     // all object type 
     {
         id:"3",
-        songName: `Superhero<br>
-        <div class="subtitle"> Metro-Boomin</div>`,
-        poster: "images/metro",
+        songName: `Pathala Pathala <br>
+        <div class="subtitle"> Damn</div>`,
+        poster: "img/Kendrick_Lamar_-_Damn.png",
     },
     {
         id:"4",
@@ -165,8 +165,8 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element)=>{
         makeAllPlays();
         e.target.classList.remove('bi-play-circle-fill');
         e.target.classList.add('bi-pause-circle-fill');
-        music.upload = `upload/${index}.mp3`;
-        poster_master_play.src =`images/${index}.jpg`;
+        music.src = `audio/${index}.mp3`;
+        poster_master_play.src =`img/${index}.jpg`;
         music.play();
         let song_title = songs.filter((ele)=>{
             return ele.id == index;
