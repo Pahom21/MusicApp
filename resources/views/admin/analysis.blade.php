@@ -134,7 +134,7 @@
 
         {{--End Of Content Section--}}
 
-        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="{{ asset('js/script.js',true) }}"></script>
 
         <script>
             // User Registrations per month
@@ -147,7 +147,7 @@
                         data: {!! $graphData['userRegistrations']->pluck('count') !!},
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
+                            // 'rgba(54, 162, 235, 0.7)',
                             'rgba(255, 206, 86, 0.7)',
                         ],
                     }],

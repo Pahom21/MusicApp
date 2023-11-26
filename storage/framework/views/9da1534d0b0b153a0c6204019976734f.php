@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/gif" href="<?php echo e(asset('Images/wave.gif')); ?>">
+    <link rel="icon" type="image/gif" href="<?php echo e(asset('Images/wave.gif',true)); ?>">
     <title><?php echo e(config('app.name', 'Laravel')); ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?php echo e(asset('css/custom.css')); ?>" class="stylesheet">
+    <link rel="stylesheet" href="<?php echo e(asset('css/custom.css',true)); ?>" class="stylesheet">
 
 </head>
 <body style="min-width: 350px">
@@ -63,7 +63,7 @@
                            <li><a class="dropdown-item" href="#">""</a></li>
                          </ul>
                       </li>
-                      <img class="rounded-circle"src="<?php echo e(asset('Images/wave.gif')); ?>" alt="Image of a user" style="width:40px;height:40px"/>
+                      <img class="rounded-circle"src="<?php echo e(asset('Images/wave.gif',true)); ?>" alt="Image of a user" style="width:40px;height:40px"/>
                 </form>
               </div>
             </div>
@@ -92,7 +92,7 @@
               <div class="song-small m-2 ms-4 col-md-6 row align-items-center">
                 <div class="col-1 h3">01</div>
                 <div class="col d-flex">
-                    <img class="song-small-img rounded m-1" src="<?php echo e(asset('Images/apple-music.svg')); ?>" alt="Album Art"/>
+                    <img class="song-small-img rounded m-1" src="<?php echo e(asset('Images/apple-music.svg',true)); ?>" alt="Album Art"/>
                     <div class="ms-1 pt-3">
                        <div>
                         <span class="song-title">Superheroes</span> |
@@ -101,11 +101,11 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <i class="bi bi-play-circle play-btn" data-src="<?php echo e(asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3')); ?>"></i>
+                    <i class="bi bi-play-circle play-btn" data-src="<?php echo e(asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3',true)); ?>"></i>
                 </div>
                 <div class="audio-controls" style = "display:none">
                     <audio class="audio-player" controls onloadedmetadata="setAudioDuration(this)">
-                        <source src="<?php echo e(asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3')); ?>" type="audio/mp3">
+                        <source src="<?php echo e(asset('upload/Metro-Boomin-Superhero-Heroes--Villains.mp3',true)); ?>" type="audio/mp3">
                         Your browser does not support the audio element.
                     </audio>
                     <div class="audio-duration">00:00</div>

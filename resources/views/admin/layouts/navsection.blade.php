@@ -1,13 +1,13 @@
  {{--Logout Section--}}
  <ul class = "side-menu">
     <li>
-      <a href="#">
-          <i class='bx bxs-cog' ></i>
-          <span class="text">Settings</span>
+      <a href="{{ route('dashboard')}}">
+          <i class='bx bx-door-open'></i>
+          <span class="text">User Side</span>
       </a>
     </li>
     <li>
-      <a href="{{route('admin.logout')}}" class="logout">
+      <a href="{{ route('admin.logout')}}" class="logout">
         <i class='bx bxs-log-out'></i>
         <span class="text">Logout</span>
       </a>
@@ -37,7 +37,7 @@
     <span class="num">8</span>
   </a>
   <a href="" class="profile">
-    <img src="{{asset('Images/wave.gif')}}" alt="Admin Image" style="width:40px;height:40px"/>
+    <img src="{{asset('Images/wave.gif',true)}}" alt="Admin Image" style="width:40px;height:40px"/>
   </a>
 </nav>
 {{--End Of NAVBAR--}}

@@ -1,19 +1,19 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} 
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
              <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{("You're logged in!") }}
                 </div>
             </div>
-        </div>
-        {{-- <header>
+        </div> --}}
+        <header>
             <div class="menu_side">
                 <h1>Playlist</h1>
                 <div class="playlist">
@@ -24,7 +24,7 @@
                 <div class="menu_song">
                     <li class="songItem">
                         <span>01</span>
-                        <img src="{{ asset('images/1.jpg')}}" alt="Alan">
+                        <img src="{{ asset('images/1.jpg',true)}}" alt="Alan">
                         <h5>
                             On My Way
                             <div class="subtitle">Alan Walker</div>
@@ -33,7 +33,7 @@
                     </li>
                     <li class="songItem">
                         <span>02</span>
-                        <img src="{{asset('images/Gunna-rodeo-dr.webp')}}" alt="Alan">
+                        <img src="{{asset('images/Gunna-rodeo-dr.webp',true)}}" alt="Alan">
                         <h5>
                             Dollaz on my head
                             <div class="subtitle">Gunna</div>
@@ -42,7 +42,7 @@
                     </li>
                     <li class="songItem">
                         <span>03</span>
-                        <img src="{{asset('images/metro 2.webp')}}" alt="Alan">
+                        <img src="{{asset('images/metro 2.webp',true)}}" alt="Alan">
                         <h5>
                             Too Many Nights
                             <div class="subtitle">Metrobomin</div>
@@ -51,7 +51,7 @@
                     </li>
                     <li class="songItem">
                         <span>04</span>
-                        <img src="{{asset('images/Wiz_Khalifa.jpg')}}" alt="Alan">
+                        <img src="{{asset('images/Wiz_Khalifa.jpg',true)}}" alt="Alan">
                         <h5>
                             We Dem Boyz
                             <div class="subtitle">Wiz Khalifa</div>
@@ -60,7 +60,7 @@
                     </li>
                     <li class="songItem">
                         <span>05</span>
-                        <img src="{{asset('images/psot malone.jpeg')}}" alt="Alan">
+                        <img src="{{asset('images/psot malone.jpeg',true)}}" alt="Alan">
                         <h5>
                             Pycho
                             <div class="subtitle">Post Malone</div>
@@ -69,7 +69,7 @@
                     </li>
                     <li class="songItem">
                         <span>06</span>
-                        <img src="{{asset('images/no type.jpeg')}}" alt="Alan">
+                        <img src="{{asset('images/no type.jpeg',true)}}" alt="Alan">
                         <h5>
                             No Type
                             <div class="subtitle">Rae Sremmurd</div>
@@ -78,7 +78,7 @@
                     </li>
                     <li class="songItem">
                         <span>07</span>
-                        <img src="{{asset('images/Mnike.jpg')}}" alt="Alan">
+                        <img src="{{asset('images/Mnike.jpg',true)}}" alt="Alan">
                         <h5>
                             Mnike
                             <div class="subtitle">Tyler ICU</div>
@@ -87,7 +87,7 @@
                     </li>
                     <li class="songItem">
                         <span>08</span>
-                        <img src="{{asset('images/lil-baby-gunna-laksana-cager.jpg')}}" alt="Alan">
+                        <img src="{{asset('images/lil-baby-gunna-laksana-cager.jpg',true)}}" alt="Alan">
                         <h5>
                             Life goes on
                             <div class="subtitle">Lil Baby</div>
@@ -133,7 +133,7 @@
                     <div class="pop_song">
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/I_Never_Liked_You_(Future).png')}}" alt="alan">
+                                <img src="{{asset('images/I_Never_Liked_You_(Future).png',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="9"></i>
                             </div>
                             <h5>On My Way
@@ -143,7 +143,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/gunna.jpg')}}" alt="alan">
+                                <img src="{{asset('images/gunna.jpg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="10"></i>
                             </div>
                             <h5>Pushin P
@@ -153,7 +153,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/Kendrick_Lamar_-_Damn.png')}}" alt="alan">
+                                <img src="{{asset('images/Kendrick_Lamar_-_Damn.png',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
                             </div>
                             <h5>Damn
@@ -163,7 +163,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/travis.png')}}" alt="alan">
+                                <img src="{{asset('images/travis.png',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="12"></i>
                             </div>
                             <h5>Outwest
@@ -173,7 +173,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/cole.jpg')}}" alt="alan">
+                                <img src="{{asset('images/cole.jpg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
                             </div>
                             <h5>No Role Modelz
@@ -183,7 +183,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/Wiz_Khalifa.jpg')}}" alt="alan">
+                                <img src="{{asset('images/Wiz_Khalifa.jpg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
                             </div>
                             <h5>So High
@@ -193,7 +193,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/psot malone.jpeg')}}" alt="alan">
+                                <img src="{{asset('images/psot malone.jpeg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="15"></i>
                             </div>
                             <h5>Congratulations
@@ -203,7 +203,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/Mnike.jpg')}}" alt="alan">
+                                <img src="{{asset('images/Mnike.jpg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="16"></i>
                             </div>
                             <h5>Mnike
@@ -213,7 +213,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/amapiano.png')}}" alt="alan">
+                                <img src="{{asset('images/amapiano.png',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="17"></i>
                             </div>
                             <h5>Amapioano Breakfast
@@ -223,7 +223,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/no type.jpeg')}}" alt="alan">
+                                <img src="{{asset('images/no type.jpeg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="18"></i>
                             </div>
                             <h5>No type
@@ -233,7 +233,7 @@
                         </li>
                         <li class="songItem">
                             <div class="img_play">
-                                <img src="{{asset('images/Wiz_Khalifa.jpg')}}" alt="alan">
+                                <img src="{{asset('images/Wiz_Khalifa.jpg',true)}}" alt="alan">
                                 <i class="bi playListPlay bi-play-circle-fill" id="19"></i>
                             </div>
                             <h5>Promises
@@ -253,37 +253,37 @@
                     </div>
                     <div class="item">
                         <li>
-                            <img src="{{asset('images/sauti soul.jpg')}}" alt="Travis scott" title="travis">
+                            <img src="{{asset('images/sauti soul.jpg',true)}}" alt="Travis scott" title="travis">
                         </li>
                         <li>
-                            <img src="{{asset('images/alan.jpg')}}" alt="Alan Walker" title="Alan Walker">
+                            <img src="{{asset('images/alan.jpg',true)}}" alt="Alan Walker" title="Alan Walker">
                         </li>
                         <li>
-                            <img src="{{asset('images/drake.webp')}}" alt="drake" title="drake">
+                            <img src="{{asset('images/drake.webp',true)}}" alt="drake" title="drake">
                         </li>
                         <li>
-                            <img src="{{asset('images/cole.jpg')}}" alt="j.cole" title="j cole">
+                            <img src="{{asset('images/cole.jpg',true)}}" alt="j.cole" title="j cole">
                         </li>
                         <li>
-                            <img src="{{asset('images/gunna1.webp')}}" alt="Gunna" title="Gunna">
+                            <img src="{{asset('images/gunna1.webp',true)}}" alt="Gunna" title="Gunna">
                         </li>
                         <li>
-                            <img src="{{asset('images/young thug.webp')}}" alt="young thug" title="Young thug">
+                            <img src="{{asset('images/young thug.webp',true)}}" alt="young thug" title="Young thug">
                         </li>
                         <li>
-                            <img src="{{asset('images/wiz.jpg')}}" alt="wiz khalifa" title="wiz khalifa">
+                            <img src="{{asset('images/wiz.jpg',true)}}" alt="wiz khalifa" title="wiz khalifa">
                         </li>
                         <li>
-                            <img src="{{asset('images/lil-baby-gunna-laksana-cager.jpg')}}" alt="lil babey" title="lil baby">
+                            <img src="{{asset('images/lil-baby-gunna-laksana-cager.jpg',true)}}" alt="lil babey" title="lil baby">
                         </li>
                         <li>
-                            <img src="{{asset('images/megan.jpg')}}" alt="meghan " title="stalion">
+                            <img src="{{asset('images/megan.jpg',true)}}" alt="meghan " title="stalion">
                         </li>
                         <li>
-                            <img src="{{asset('images/metro 2.webp')}}" alt="metro boomin" title="metrobomin">
+                            <img src="{{asset('images/metro 2.webp',true)}}" alt="metro boomin" title="metrobomin">
                         </li>
                         <li>
-                            <img src="{{asset('images/post.jpeg')}}" alt="post" title="psoy malone">
+                            <img src="{{asset('images/post.jpeg',true)}}" alt="post" title="psoy malone">
                         </li>
 
                     </div>
@@ -297,7 +297,7 @@
                     <div class="wave1"></div>
                     <div class="wave1"></div>
                 </div>
-                <img src="{{asset('images/drake.webp')}}" alt="Alan" id="poster_master_play">
+                <img src="{{asset('images/drake.webp',true)}}" alt="Alan" id="poster_master_play">
                 <h5 id="title">In my feelings<br>
                     <div class="subtitle">drake</div>
                 </h5>
@@ -321,6 +321,6 @@
                     <div class="dot" id="vol_dot"></div>
                 </div>
             </div>
-        </header> --}}
+        </header>
     </div>
 </x-app-layout>

@@ -1,2 +1,2 @@
-<img class="rounded-circle"src="<?php echo e(asset('Images/wave.gif')); ?>" alt="Image of a user" style="width:40px;height:40px"/>
+<img class="rounded-circle"src="<?php echo e(asset('Images/wave.gif',true)); ?>" alt="Image of a user" style="width:40px;height:40px"/>
 <?php /**PATH C:\xampp\htdocs\Loginverification\resources\views/components/application-logo.blade.php ENDPATH**/ ?>
