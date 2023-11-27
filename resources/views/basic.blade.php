@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Subscription</title>
-    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/style2.css',true)}}">
+
 </head>
 <body>
     <div class="container">
         <h1>Basic Subscription</h1>
         <p>Pay with Mpesa to subscribe to the Basic Plan.</p>
-        
-      
-        
-    
 
         <!-- Payment details form for M-Pesa -->
         <div id="mpesa-details" class="payment-details" >
@@ -32,7 +28,7 @@
         </div>
     </div>
 
-    
+
 
 </body>
 </html>

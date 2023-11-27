@@ -60,7 +60,7 @@
                            <li><a class="dropdown-item" href="{{route('login')}}">Login</a></a></li>
                            <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                            <li><hr class="dropdown-divider"></li>
-                           <li><a class="dropdown-item" href="#">""</a></li>
+                           <li><a class="dropdown-item" href="{{route('subscription')}}">Premiuim</a></li>
                          </ul>
                       </li>
                       <img class="rounded-circle"src="{{asset('Images/wave.gif',true)}}" alt="Image of a user" style="width:40px;height:40px"/>

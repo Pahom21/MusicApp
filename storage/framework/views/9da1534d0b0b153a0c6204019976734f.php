@@ -60,7 +60,7 @@
                            <li><a class="dropdown-item" href="<?php echo e(route('login')); ?>">Login</a></a></li>
                            <li><a class="dropdown-item" href="<?php echo e(route('register')); ?>">Register</a></li>
                            <li><hr class="dropdown-divider"></li>
-                           <li><a class="dropdown-item" href="#">""</a></li>
+                           <li><a class="dropdown-item" href="<?php echo e(route('subscription')); ?>">Premiuim</a></li>
                          </ul>
                       </li>
                       <img class="rounded-circle"src="<?php echo e(asset('Images/wave.gif',true)); ?>" alt="Image of a user" style="width:40px;height:40px"/>

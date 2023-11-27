@@ -194,7 +194,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \Safaricom\Mpesa\MpesaServiceProvider::class
+        //\Safaricom\Mpesa\MpesaServiceProvider::class
+        Gathuku\Mpesa\MpesaServiceProvider::class,
 
     ],
 
@@ -211,9 +212,20 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Mpesa'=> \Safaricom\Mpesa\MpesaServiceProvider::class
+        'Mpesa' => Gathuku\Mpesa\Facades\Mpesa::class,
     ])->toArray(),
 
-    
+    'debug_blacklist'=>[
+        '_ENV' =>[
+            'MPESA_CONSUMER_KEY',
+            'MPESA_CONSUMER_SECRET',
+            'MPESA_SHORTCODE',
+            'MPESA_ENV',
+            'MPESA_TEST_MSISDN',
+            'MPESA_TEST_URL',
+            'MPESA_PASSKEY',
+            'MPESA_B2C_PASSWORD'
+        ]
+    ]
 
 ];

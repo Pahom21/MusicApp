@@ -30,6 +30,25 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/basic-subscription', function (){
+    return view('basic');
+ })->name('basic-subscription');
+
+Route::get('/premium-subscription', function (){
+     return view('premium');
+  })->name('premium-subscription');
+
+Route::get('/subscriptions',function(){
+    return view('subscription');
+})->name('subscription');
+
+// Route::get('/pay',[PaymentController::class, 'stk'])->name('pay-stk');
+Route::post('/v1/mpesatest/stk/push', [PaymentController::class, 'STKPush'])->name('pay-stk');
+
+Route::post('v1/confirm', [PaymentController::class, 'STKConfirm'])->name('mpesa.confirm');
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -98,20 +117,9 @@ Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/basic-subscription', function (){
-   return view('basic');
-})->name('basic-subscription');
-
-Route::get('/premium-subscription', function (){
-    return view('premium');
- })->name('premium-subscription');
-
- //Route::get('/pay',[PaymentController::class, 'stk']);
-
- Route::post('/pay-stk', [PaymentController::class, 'stk'])->name('pay-stk');
 
 
 
 
 
- 
+
