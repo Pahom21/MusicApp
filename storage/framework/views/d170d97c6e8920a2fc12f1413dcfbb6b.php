@@ -65,10 +65,7 @@
 					<i class='bx bx-plus'></i>
 					<span class="text">Create Song</span>
 				</a>
-				<a href="#" class="btn-download">
-					<i class='bx bxs-cloud-download' ></i>
-					<span class="text">Download PDF</span>
-				</a>
+				
 			</div>
 
                 <ul class="box-info">

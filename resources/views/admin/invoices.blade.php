@@ -65,7 +65,7 @@
 					<i class='bx bx-plus'></i>
 					<span class="text">Create Invoice</span>
 				</a>
-				<a href="{{route('invoice.pdf')}}" class="btn-download">
+				<a href="{{route('invoice.pdf')}}" id="downloadPdf" class="btn-download">
 					<i class='bx bxs-cloud-download' ></i>
 					<span class="text">Download PDF</span>
 				</a>
@@ -156,6 +156,32 @@
           {{--End Of Main Section--}}
         </section>
 
+
+        <!-- Include the jsPDF library -->
+
+        <!-- Include the latest version of jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        <!-- Include the latest version of jsPDF -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#downloadPdf').click(function () {
+                    // Create a new jsPDF instance
+                    var pdf = new jsPDF();
+
+                    // Get the HTML content of the article
+                    var content = $('#invoiceContent')[0];
+
+                    // Use jsPDF's fromHTML to add HTML content to the PDF
+                    pdf.fromHTML(content, 15, 15);
+
+                    // Save the PDF with the name 'invoice.pdf'
+                    pdf.save('invoice.pdf');
+                });
+            });
+        </script>
         {{--End Of Content Section--}}
         @include('admin.layouts.tailsection')
 

@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Response;
 use Mpdf\Mpdf as PDF;
+
 
 
 
@@ -56,28 +58,35 @@ class InvoiceController extends Controller
     }
 
     public function InvoicesPDF(){
-        try {
-            $invoices = Invoice::all();
+        // try {
+        //     $invoices = Invoice::all();
 
-            $title = 'Invoices';
-            $date = date('Y-m-d');
+        //     $title = 'Invoices';
+        //     $date = date('Y-m-d');
 
-            $pdf = new PDF(); // assuming you've imported or aliased the Mpdf class correctly
+        //     $pdf = new PDF(); // assuming you've imported or aliased the Mpdf class correctly
 
-            return response()->streamDownload(function () use ($invoices, $title, $date, $pdf) {
-                // Assuming 'admin.invoicepdf_view' generates HTML content for the invoice
-                $htmlContent = view('admin.invoicepdf_view', compact('invoices', 'title', 'date'))->render();
+        //     return response()->streamDownload(function () use ($invoices, $title, $date, $pdf) {
+        //         // Assuming 'admin.invoicepdf_view' generates HTML content for the invoice
+        //         $htmlContent = view('admin.invoicepdf_view', compact('invoices', 'title', 'date'))->render();
 
-                // Add the HTML content to the mPDF instance
-                $pdf->WriteHTML($htmlContent);
+        //         // Add the HTML content to the mPDF instance
+        //         $pdf->WriteHTML($htmlContent);
 
-                // Output the PDF content
-                echo $pdf->Output('', 'S');
-            }, 'invoice.pdf');
-        } catch (\Exception $e) {
-            Log::error('Error generating PDF: ' . $e->getMessage());
-            return response()->json(['error' => 'Error generating PDF.'], 500);
-        }
+        //         // Output the PDF content
+        //         echo $pdf->Output('', 'S');
+        //     }, 'invoice.pdf');
+        // } catch (\Exception $e) {
+        //     Log::error('Error generating PDF: ' . $e->getMessage(~));
+        //     return response()->json(['error' => 'Error generating PDF.'], 500);
+        // }
+
+        $invoices = Invoice::all();
+
+        $title = 'Invoices';
+        $date = date('Y-m-d');
+
+        return view('admin.invoicepdf_view',compact('invoices','title','date'))->render();
     }
     public function edit($invoicesId)
     {

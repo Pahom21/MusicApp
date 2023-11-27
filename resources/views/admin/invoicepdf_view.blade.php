@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="{{ asset('css/admdash.css',true)}}">
     </head>
     <body>
-        <article>
+        <article id="invoiceContent">
             <header>
                 <h3>{{ $title }}</h3>
                 <p>{{ $date }}</p>
@@ -47,7 +47,7 @@
                         <td>
                             <p>{{$invoice->created_at}}</p>
                         </td>
-                        <td>
+                        {{-- <td>
                             <a href="{{ route('invoice.edit', ['invoicesId' => $invoice->invoicesId]) }}"><i class='bx bx-edit-alt'></i></a>
 
                             &nbsp;
@@ -56,7 +56,7 @@
                                     <i class='bx bx-folder-minus'></i>
                                 </a>
                             </span>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>

@@ -101,9 +101,11 @@
             <div class="song_side">
                 <nav>
                     <ul>
-                        <li>PREMIUM<span></span></li>
-                        <li>MY LIBRARY</li>
-                        <li>MY ACCOUNT</li>
+                        <a>PREMIUM<span></span></a>
+                        <br>
+                        <a>MY LIBRARY</a>
+                        
+                        <a>MY ACCOUNT</a>
                     </ul>
                     <div class="search">
                         <i class="bi bi-search"></i>
