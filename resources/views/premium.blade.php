@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Subscription</title>
-    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/style2.css',true) }}">
+
 </head>
 <body>
     <div class="container">
         <h1>Premium Subscription</h1>
         <p>Pay with Mpesa to subscribe to the Premium Plan.</p>
-        
-      
-        
-    
 
-        
         <div id="mpesa-details" class="payment-details" >
             <form method="post" action="{{ route('pay-stk') }}" >
                 @csrf <!-- Add a CSRF token for security -->
@@ -31,8 +26,5 @@
             </form>
         </div>
     </div>
-
-    
-
 </body>
 </html>

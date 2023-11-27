@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player Subscription</title>
-    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style2.css',true)}}">
 </head>
 <body>
     <div class="container">
@@ -14,17 +14,17 @@
             <div class="plan">
                 <h2>Basic Plan</h2>
                 <p>Access to a limited music library.</p>
-                <span class="price">Ksh 1/month</span>
+                <span class="price">Ksh 5/month</span>
                 <button> <a href="{{ route('basic-subscription') }}" class="basic-link">Subscribe </a></button>
             </div>
             <div class="plan">
                 <h2>Premium Plan</h2>
                 <p>Unlimited access to our full music library.</p>
-                <span class="price">Ksh 3/month</span>
+                <span class="price">Ksh 10/month</span>
                 <button> <a href="{{ route('premium-subscription') }}" class="premium-link">Subscribe </a></button>
         </div>
     </div>
     <script src="index.js"></script>
-    
+
 </body>
 </html>

@@ -33,6 +33,28 @@
       'PDF' => 'Mccarlosen\\LaravelMpdf\\Facades\\LaravelMpdf',
     ),
   ),
+  'gathuku/laravelmpesa' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Gathuku\\Mpesa\\MpesaServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Mpesa' => 'Gathuku\\Mpesa\\Facades\\Mpesa',
+    ),
+  ),
+  'iankumu/mpesa' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Iankumu\\Mpesa\\MpesaServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Mpesa' => 'Iankumu\\Mpesa\\Facades\\Mpesa',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 
